@@ -1,8 +1,8 @@
-# Created by .ignore support plugin (hsz.mobi)
 .idea/
 vendor/
 Tests/ExtraTest/
 Tests/TestConfig.php
+Tests/LiveAPI.php
 
 
 
