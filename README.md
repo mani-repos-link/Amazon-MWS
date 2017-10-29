@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Phoenix404/Amazon-MWS.svg?branch=master)](https://travis-ci.org/Phoenix404/Amazon-MWS)
+
 # Amazon-MWS
 
 Make easy requests to mws api.
