@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<GetMatchingProductForIdResponse xmlns="http://mws.amazonservices.com/schema/Products/2011-10-01">
+    <GetMatchingProductForIdResult Id="B01K7VLD52" IdType="ASIN" status="Success">
+        <Products xmlns="http://mws.amazonservices.com/schema/Products/2011-10-01" xmlns:ns2="http://mws.amazonservices.com/schema/Products/2011-10-01/default.xsd">
+            <Product>
+                <Identifiers>
+                    <MarketplaceASIN>
+                        <MarketplaceId>APJ6JRA9NG5V4</MarketplaceId>
+                        <ASIN>B01K7VLD52</ASIN>
+                    </MarketplaceASIN>
+                </Identifiers>
+                <AttributeSets>
+                    <ns2:ItemAttributes xml:lang="it-IT">
+                        <ns2:AspectRatio>unknown_aspect_ratio</ns2:AspectRatio>
+                        <ns2:Binding>Personal computer</ns2:Binding>
+                        <ns2:Brand>Samsung</ns2:Brand>
+                        <ns2:Color>Silver</ns2:Color>
+                        <ns2:DisplaySize Units="centimeters">27</ns2:DisplaySize>
+                        <ns2:ItemDimensions>
+                            <ns2:Height Units="inches">14.25</ns2:Height>
+                            <ns2:Length Units="inches">24.17</ns2:Length>
+                            <ns2:Width Units="inches">5.59</ns2:Width>
+                            <ns2:Weight Units="pounds">9.48</ns2:Weight>
+                        </ns2:ItemDimensions>
+                        <ns2:Label>Samsung</ns2:Label>
+                        <ns2:Manufacturer>Samsung</ns2:Manufacturer>
+                        <ns2:Model>lc27f581fduxen</ns2:Model>
+                        <ns2:NumberOfItems>1</ns2:NumberOfItems>
+                        <ns2:PackageDimensions>
+                            <ns2:Height Units="inches">7.44</ns2:Height>
+                            <ns2:Length Units="inches">27.48</ns2:Length>
+                            <ns2:Width Units="inches">17.48</ns2:Width>
+                            <ns2:Weight Units="pounds">13.58</ns2:Weight>
+                        </ns2:PackageDimensions>
+                        <ns2:PackageQuantity>1</ns2:PackageQuantity>
+                        <ns2:PartNumber>613338</ns2:PartNumber>
+                        <ns2:ProductGroup>Personal Computer</ns2:ProductGroup>
+                        <ns2:ProductTypeName>COMPUTER_COMPONENT</ns2:ProductTypeName>
+                        <ns2:Publisher>Samsung</ns2:Publisher>
+                        <ns2:SmallImage>
+                            <ns2:URL>http://ecx.images-amazon.com/images/I/41qy4UscvSL._SL75_.jpg</ns2:URL>
+                            <ns2:Height Units="pixels">50</ns2:Height>
+                            <ns2:Width Units="pixels">75</ns2:Width>
+                        </ns2:SmallImage>
+                        <ns2:Studio>Samsung</ns2:Studio>
+                        <ns2:Title>Samsung C27F581F LCD Monitor 27 "</ns2:Title>
+                    </ns2:ItemAttributes>
+                </AttributeSets>
+                <Relationships/>
+                <SalesRankings>
+                    <SalesRank>
+                        <ProductCategoryId>pc_display_on_website</ProductCategoryId>
+                        <Rank>27227</Rank>
+                    </SalesRank>
+                    <SalesRank>
+                        <ProductCategoryId>ce_display_on_website</ProductCategoryId>
+                        <Rank>251057</Rank>
+                    </SalesRank>
+                    <SalesRank>
+                        <ProductCategoryId>460159031</ProductCategoryId>
+                        <Rank>848</Rank>
+                    </SalesRank>
+                </SalesRankings>
+            </Product>
+        </Products>
+    </GetMatchingProductForIdResult>
+    <ResponseMetadata>
+        <RequestId>3d161563-99ff-4626-b28f-323e9e99a126</RequestId>
+    </ResponseMetadata>
+</GetMatchingProductForIdResponse>

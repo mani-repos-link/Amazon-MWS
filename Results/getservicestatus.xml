@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<GetServiceStatusResponse xmlns="http://mws.amazonservices.com/schema/Products/2011-10-01">
+  <GetServiceStatusResult>
+    <Status>GREEN</Status>
+    <Timestamp>2017-10-28T10:33:05.095Z</Timestamp>
+  </GetServiceStatusResult>
+  <ResponseMetadata>
+    <RequestId>6c38a0a5-05a2-459c-8c9b-03802f06d5cf</RequestId>
+  </ResponseMetadata>
+</GetServiceStatusResponse>

@@ -1,0 +1,21 @@
+{
+    "name": "phoenix404/amazon-mws",
+    "description": "Make simple request to MWS.",
+    "type": "library",
+    "require": {
+        "phoenix404/curl-requester": "v1.0.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "phoenix404",
+            "email": "manpreet2681995@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "AmazonMWS\\": "Src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
