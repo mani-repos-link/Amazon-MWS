@@ -17,5 +17,10 @@
             "AmazonMWS\\": "Src/"
         }
     },
+    "scripts": {
+        "post-create-project-cmd": [
+            "@php -r \"file_exists('./Tests/TestConfig.php.inc') || copy('./Tests/TestConfig.php.inc', './Tests/TestConfig.php');\""
+        ]
+    },
     "minimum-stability": "dev"
 }
