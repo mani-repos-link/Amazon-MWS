@@ -7,7 +7,7 @@ Make easy requests to mws api.
 
 #### Composer 
 
-  composer require phoenix404/amazon-mws
+    composer require phoenix404/amazon-mws
   
 #### Git
   
