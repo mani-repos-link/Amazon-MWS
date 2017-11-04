@@ -802,7 +802,7 @@ class AmazonMWSCore
         return $this;
     }
 
-    protected function _invoke($useParams = false, $debug = false)
+    public function _invoke($useParams = false, $debug = false)
     {
         $this->invoke($useParams, $debug);
         return $this->getResult() == "" ? false : $this->getResult();
