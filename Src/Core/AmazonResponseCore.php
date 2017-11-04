@@ -256,8 +256,9 @@ class AmazonResponseCore
         return true;
     }
 
-    public function getParsedXML()
+    public function getParsedXML($xml="")
     {
+        $this->parseXML($xml);
         return $this->_isSet($this->options, "xmlParsed");
     }
 }
