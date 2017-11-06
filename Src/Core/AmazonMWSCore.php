@@ -486,6 +486,13 @@ class AmazonMWSCore
 
         if (isset($markets[$code])) return $markets[$code];
 
+        $marketValues = array_values($markets);
+        if(isset($marketValues[$code])
+        {
+        	return $code;
+        }
+
+
         $this->log("MarketplaceId provided does not exists! Currently following endpoints are supported US, BR, AU, CA, MX, DE, ES, FR, IT, UK, IN, CN, JP.");
         $this->log("By default IT(APJ6JRA9NG5V4) endpoints has been set. ", "", "WARNING");
 
