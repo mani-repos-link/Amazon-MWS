@@ -36,4 +36,5 @@ $feed = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
 //parameter can be array also or just a string
 $result  = $orders->SubmitFeed( $feed, "_POST_FLAT_FILE_ORDER_ACKNOWLEDGEMENT_DATA_", "IT", false);
 
-echo "\n<textarea rows='20' cols='200'>".$result."</textarea>\n\n";
+echo "\n<textarea rows='20' cols='200'>".strval($result)."</textarea>\n\n";
+pp($result->getResultAsObject());

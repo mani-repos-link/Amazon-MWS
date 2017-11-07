@@ -42,7 +42,8 @@ class Reports extends AmazonMWSCore
     {
         $this->setAPIAction("GetReport");
         $this->setOperationField("ReportId", $reportID);
-        return $this->_invoke();
+        $this->_invoke();
+        return $this;
     }
 
     public function GetReportCount($ReportTypeList="", $Acknowledged=false, $AvailableFromDate="", $AvailableToDate="")
@@ -62,7 +63,8 @@ class Reports extends AmazonMWSCore
             $date = $this->__fixDateTime($AvailableToDate);
             $this->setOperationField("AvailableToDate", $date);
         }
-        return $this->_invoke();
+        $this->_invoke();
+        return $this;
 
     }
 
@@ -87,7 +89,8 @@ class Reports extends AmazonMWSCore
             $date = $this->__fixDateTime($AvailableToDate);
             $this->setOperationField("AvailableToDate", $date);
         }
-        return $this->_invoke();
+        $this->_invoke();
+        return $this;
 
     }
 
@@ -95,7 +98,8 @@ class Reports extends AmazonMWSCore
     {
         $this->setAPIAction("GetReportListByNextToken");
         $this->setOperationField("NextToken", $token);
-        return $this->_invoke();
+        $this->_invoke();
+        return $this;
     }
 
     public function GetReportRequestCount($RequestedFromDate="", $RequestedToDate="", $ReportTypeList="", $ReportProcessingStatusList="")
@@ -116,7 +120,9 @@ class Reports extends AmazonMWSCore
 
         if(!empty($RequestedToDate)) $this->_setList($ReportTypeList, "ReportTypeList.Type.");
         if(!empty($ReportProcessingStatusList)) $this->_setList($ReportProcessingStatusList, "ReportProcessingStatusList.Status.");
-        return $this->_invoke();
+
+        $this->_invoke();
+        return $this;
 
     }
 
@@ -142,14 +148,17 @@ class Reports extends AmazonMWSCore
             $date = $this->__fixDateTime($RequestedToDate);
             $this->setOperationField("RequestedToDate", $date);
         }
-        return $this->_invoke();
+        $this->_invoke();
+        return $this;
     }
 
     public function GetReportRequestListByNextToken($token)
     {
         $this->setAPIAction("GetReportRequestListByNextToken");
         $this->setOperationField("NextToken", $token);
-        return $this->_invoke();
+
+        $this->_invoke();
+        return $this;
     }
 
     public function CancelReportRequests($RequestedFromDate="", $RequestedToDate="",
@@ -172,29 +181,29 @@ class Reports extends AmazonMWSCore
             $date = $this->__fixDateTime($RequestedToDate);
             $this->setOperationField("RequestedToDate", $date);
         }
-        return $this->_invoke();
+        $this->_invoke();
+        return $this;
     }
 
     public function RequestReport($ReportType, $MarketplaceIdList="", $StartDate="", $EndDate="", $ReportOptions="")
     {
         $this->setAPIAction("CancelReportRequests");
-        if(!empty($StartDate))
-        {
+        if (!empty($StartDate)) {
             $date = $this->__fixDateTime($StartDate);
             $this->setOperationField("StartDate", $date);
         }
 
-        if(!empty($EndDate))
-        {
+        if (!empty($EndDate)) {
             $date = $this->__fixDateTime($EndDate);
             $this->setOperationField("EndDate", $date);
         }
 
-        if(!empty($ReportOptions)) $this->setOperationField("ReportOptions", $ReportOptions);
-        if(!empty($ReportType)) $this->setOperationField("ReportType", $ReportType);
-        if(!empty($MarketplaceIdList)) $this->_setMarketPlaceId($MarketplaceIdList, true);
-        return $this->_invoke();
+        if (!empty($ReportOptions)) $this->setOperationField("ReportOptions", $ReportOptions);
+        if (!empty($ReportType)) $this->setOperationField("ReportType", $ReportType);
+        if (!empty($MarketplaceIdList)) $this->_setMarketPlaceId($MarketplaceIdList, true);
 
+        $this->_invoke();
+        return $this;
     }
 
     public function ManageReportSchedule($ReportType, $Schedule, $ScheduleDate="")
@@ -207,28 +216,35 @@ class Reports extends AmazonMWSCore
             $date = $this->__fixDateTime($ScheduleDate);
             $this->setOperationField("ScheduleDate", $date);
         }
-        return $this->_invoke();
+        $this->_invoke();
+        return $this;
     }
 
     public function GetReportScheduleList($ReportTypeList)
     {
         $this->setAPIAction("GetReportScheduleList");
         $this->_setList($ReportTypeList, "ReportTypeList.Type.");
-        return $this->_invoke();
+
+        $this->_invoke();
+        return $this;
     }
 
     public function GetReportScheduleListByNextToken($token)
     {
         $this->setAPIAction("GetReportScheduleListByNextToken");
         $this->setOperationField("NextToken.-", $token);
-        return $this->_invoke();
+
+        $this->_invoke();
+        return $this;
     }
 
     public function GetReportScheduleCount($ReportTypeList="")
     {
         $this->setAPIAction("GetReportScheduleCount");
         if(!empty($ReportTypeList)) $this->_setList($ReportTypeList, "ReportTypeList.Type.");
-        return $this->_invoke();
+
+        $this->_invoke();
+        return $this;
     }
 
     public function UpdateReportAcknowledgements($ReportIdList, $Acknowledged="")
@@ -236,7 +252,9 @@ class Reports extends AmazonMWSCore
         $this->setAPIAction("UpdateReportAcknowledgements");
         $this->_setList($ReportIdList, "ReportIdList.Id.");
         if(!empty($Acknowledged)) $this->setOperationField("Acknowledged", $Acknowledged);
-        return $this->_invoke();
+
+        $this->_invoke();
+        return $this;
     }
 
 }

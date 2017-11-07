@@ -6,4 +6,7 @@ include "../TestConfig.php";
 
 $products = new Products($sellerId,$awsKey,$secretKey);
 $result  = $products->GetServiceStatus();
-echo "\n<textarea rows='10' cols='100'>".$result."</textarea>\n\n";
+
+
+echo "\n<textarea rows='20' cols='200'>".strval($result)."</textarea>\n\n";
+pp($result->getResultAsObject());

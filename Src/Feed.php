@@ -80,7 +80,8 @@ class Feed extends AmazonMWSCore
             $date = $this->__fixDateTime($SubmittedFromDate);
             $this->setOperationField("SubmittedFromDate", $date);
         }
-        return $this->_invoke();
+        $result = $this->_invoke();
+        return $this;
     }
 
     public function GetFeedSubmissionList($FeedSubmissionIdList="", $MaxCount="", $FeedTypeList="",
@@ -104,7 +105,8 @@ class Feed extends AmazonMWSCore
             $date = $this->__fixDateTime($SubmittedFromDate);
             $this->setOperationField("SubmittedFromDate", $date);
         }
-        return $this->_invoke();
+        $result = $this->_invoke();
+        return $this;
 
     }
 
@@ -112,7 +114,8 @@ class Feed extends AmazonMWSCore
     {
         $this->setAPIAction("GetFeedSubmissionListByNextToken");
         $this->setOperationField("NextToken", $token);
-        return $this->_invoke();
+        $result = $this->_invoke();
+        return $this;
     }
 
     public function GetFeedSubmissionCount($FeedTypeList="", $FeedProcessingStatusList="", $SubmittedFromDate="", $SubmittedToDate="")
@@ -132,14 +135,16 @@ class Feed extends AmazonMWSCore
             $date = $this->__fixDateTime($SubmittedFromDate);
             $this->setOperationField("SubmittedFromDate", $date);
         }
-        return $this->_invoke();
+        $result = $this->_invoke();
+        return $this;
     }
 
     public function GetFeedSubmissionResult($FeedSubmissionId)
     {
         $this->setAPIAction("GetFeedSubmissionResult");
         $this->setOperationField("FeedSubmissionId", $FeedSubmissionId);
-        return $this->_invoke();
+        $this->_invoke();
+        return $this;
     }
 
     public function SubmitFeed($feed, $FeedType="", $MarketplaceIdList="", $PurgeAndReplace=false)
@@ -189,7 +194,7 @@ class Feed extends AmazonMWSCore
         $this->setHeaders($header);
         $result =  $this->_invoke();
         $this->closeOpenedFileInstance();
-        return $result;
+        return $this;
     }
 
 

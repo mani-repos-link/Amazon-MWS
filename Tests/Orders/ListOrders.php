@@ -8,4 +8,5 @@ $orders = new Orders($sellerId, $awsKey, $secretKey, "IT");
 
 $result  = $orders->ListOrders("IT", "-2 days");
 
-echo "\n<textarea rows='20' cols='200'>".$result."</textarea>\n\n";
+echo "\n<textarea rows='20' cols='200'>".strval($result)."</textarea>\n\n";
+pp($result->getResultAsObject());

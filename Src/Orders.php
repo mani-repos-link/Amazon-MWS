@@ -131,7 +131,8 @@ class Orders extends AmazonMWSCore
     public function GetServiceStatus()
     {
         $this->setAPIAction("GetServiceStatus");
-        return $this->_invoke();
+        $this->_invoke();
+        return $this;
     }
 
     public function ListOrders($marketplaceId, $CreatedAfter="", $CreatedBefore="",
@@ -156,35 +157,40 @@ class Orders extends AmazonMWSCore
         if(!empty($TFMShipmentStatus)) $this->setOperationField("TFMShipmentStatus", $TFMShipmentStatus);
         if(!empty($MaxResultsPerPage)) $this->setOperationField("MaxResultsPerPage", $MaxResultsPerPage);
 
-        return $this->_invoke();
+        $this->_invoke();
+        return $this;
     }
 
     public function ListOrdersByNextToken($token)
     {
         $this->setAPIAction("ListOrdersByNextToken");
         $this->setOperationField("NextToken", $token);
-        return $this->_invoke();
+        $this->_invoke();
+        return $this;
     }
 
     public function GetOrder($amazonOrderID)
     {
         $this->setAPIAction("GetOrder");
         $this->_setList($amazonOrderID,"AmazonOrderId.Id.");
-        return $this->_invoke();
+        $this->_invoke();
+        return $this;
     }
 
     public function ListOrderItems($amazonOrderID)
     {
         $this->setAPIAction("ListOrderItems");
         $this->setOperationField("AmazonOrderId", $amazonOrderID);
-        return $this->_invoke();
+        $this->_invoke();
+        return $this;
     }
 
     public function ListOrderItemsByNextToken($token)
     {
         $this->setAPIAction("ListOrderItemsByNextToken");
         $this->setOperationField("NextToken", $token);
-        return $this->_invoke();
+        $this->_invoke();
+        return $this;
     }
 
 }

@@ -140,7 +140,8 @@ class Products extends AmazonMWSCore
     public function GetServiceStatus()
     {
         $this->setAPIAction("GetServiceStatus");
-        return $this->_invoke();
+        $result = $this->_invoke();
+        return $this;
     }
 
     public function ListMatchingProducts($query, $marketPlaceId="")
@@ -148,7 +149,8 @@ class Products extends AmazonMWSCore
         $this->setAPIAction("ListMatchingProducts");
         $this->setOperationField("Query", $query);
         $this->_setMarketPlaceId($marketPlaceId);
-        return $this->_invoke();
+        $result = $this->_invoke();
+        return $this;
     }
 
     public function GetMatchingProduct($asin, $marketPlaceId="")
@@ -156,7 +158,8 @@ class Products extends AmazonMWSCore
         $this->setAPIAction("GetMatchingProduct");
         $this->_setAsin($asin, true);
         $this->_setMarketPlaceId($marketPlaceId);
-        return $this->_invoke();
+        $this->_invoke();
+        return $this;
     }
     
     public function GetMatchingProductForId($idType, $idValue, $marketPlaceId="")
@@ -165,7 +168,8 @@ class Products extends AmazonMWSCore
         $this->_setIdType($idType);
         $this->_setIdList($idValue);
         $this->_setMarketPlaceId($marketPlaceId);
-        return $this->_invoke();
+        $this->_invoke();
+        return $this;
     }
 
     public function GetCompetitivePricingForSKU($SellerSKU, $marketPlaceId="")
@@ -173,7 +177,8 @@ class Products extends AmazonMWSCore
         $this->setAPIAction("GetCompetitivePricingForSKU");
         $this->_setSellerSKU($SellerSKU,true);
         $this->_setMarketPlaceId($marketPlaceId);
-        return $this->_invoke();
+        $this->_invoke();
+        return $this;
     }
 
     public function GetCompetitivePricingForASIN($asin, $marketPlaceId="")
@@ -181,7 +186,8 @@ class Products extends AmazonMWSCore
         $this->setAPIAction("GetCompetitivePricingForASIN");
         $this->_setAsin($asin,true);
         $this->_setMarketPlaceId($marketPlaceId);
-        return $this->_invoke();
+        $this->_invoke();
+        return $this;
     }
 
     /**
@@ -202,8 +208,8 @@ class Products extends AmazonMWSCore
         $this->_setSellerSKU($SellerSKU);
         $this->_setMarketPlaceId($marketPlaceId);
         $this->setOperationField("ItemCondition", $ItemCondition);
-        $result =  $this->_invoke(true);
-        return $result;
+        $this->_invoke(true);
+        return $this;
     }
 
     public function GetLowestPricedOffersForASIN($asin, $ItemCondition, $marketPlaceId="")
@@ -212,8 +218,8 @@ class Products extends AmazonMWSCore
         $this->_setAsin($asin);
         $this->_setMarketPlaceId($marketPlaceId);
         $this->setOperationField("ItemCondition", $ItemCondition);
-        $result =  $this->_invoke(true);
-        return $result;
+        $this->_invoke(true);
+        return $this;
     }
 
     /**
@@ -231,8 +237,8 @@ class Products extends AmazonMWSCore
         if(!empty($ItemCondition))  $this->setOperationField("ItemCondition", $ItemCondition);
         if(!empty($excludeMe))  $this->setOperationField("ExcludeMe", $excludeMe);
 
-        $result =  $this->_invoke(true);
-        return $result;
+        $this->_invoke(true);
+        return $this;
     }
 
     public function GetLowestOfferListingsForASIN($asin, $ItemCondition="", $excludeMe=false, $marketPlaceId="")
@@ -244,8 +250,9 @@ class Products extends AmazonMWSCore
         if(!empty($ItemCondition))  $this->setOperationField("ItemCondition", $ItemCondition);
         if(!empty($excludeMe))  $this->setOperationField("ExcludeMe", $excludeMe);
 
-        $result =  $this->_invoke(true);
-        return $result;
+
+        $this->_invoke(true);
+        return $this;
     }
 
     public function GetMyFeesEstimate($marketplaceId, $IdType, $IdValue, $IsAmazonFulfilled, $Identifier="request1",
@@ -274,8 +281,8 @@ class Products extends AmazonMWSCore
         $this->_setFeesEstimateRequestPriceToEstimateFeesPointsPointsNumber($PointsPointsNumber);
         if(!empty($PointsMonetaryValueAmount)) $this->_setFeesEstimateRequestPriceToEstimateFeesPointsPointsMonetaryValueAmount($IdType);
         if(!empty($PointsPointsMonetaryValueCurrencyCode)) $this->_setFeesEstimateRequestPriceToEstimateFeesPointsPointsMonetaryValueCurrencyCode($IdType);
-        $result =  $this->_invoke(true);
-        return $result;
+        $this->_invoke(true);
+        return $this;
     }
 
     public function GetMyPriceForSKU($SellerSKU, $ItemCondition="", $marketPlaceId="")
@@ -284,8 +291,8 @@ class Products extends AmazonMWSCore
         $this->_setSellerSKU($SellerSKU, true);
         $this->_setMarketPlaceId($marketPlaceId);
         if(!empty($ItemCondition)) $this->setOperationField("ItemCondition", $ItemCondition);
-        $result =  $this->_invoke(true);
-        return $result;
+        $this->_invoke(true);
+        return $this;
     }
 
     public function GetMyPriceForASIN($asin, $ItemCondition="", $marketPlaceId="")
@@ -294,8 +301,8 @@ class Products extends AmazonMWSCore
         $this->_setAsin($asin, true);
         $this->_setMarketPlaceId($marketPlaceId);
         if(!empty($ItemCondition)) $this->setOperationField("ItemCondition", $ItemCondition);
-        $result =  $this->_invoke(true);
-        return $result;
+        $this->_invoke(true);
+        return $this;
     }
 
     public function GetProductCategoriesForSKU($sellerSKU, $marketPlaceId="")
@@ -304,8 +311,8 @@ class Products extends AmazonMWSCore
         $this->_setSellerSKU($sellerSKU);
         $this->_setMarketPlaceId($marketPlaceId);
         if(!empty($ItemCondition)) $this->setOperationField("ItemCondition", $ItemCondition);
-        $result =  $this->_invoke(true);
-        return $result;
+        $this->_invoke(true);
+        return $this;
     }
 
     public function GetProductCategoriesForASIN($asin, $marketPlaceId="")
@@ -314,8 +321,8 @@ class Products extends AmazonMWSCore
         $this->_setAsin($asin);
         $this->_setMarketPlaceId($marketPlaceId);
         if(!empty($ItemCondition)) $this->setOperationField("ItemCondition", $ItemCondition);
-        $result =  $this->_invoke(true);
-        return $result;
+        $this->_invoke(true);
+        return $this;
     }
 
 
