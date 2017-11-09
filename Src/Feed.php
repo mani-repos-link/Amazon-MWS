@@ -12,8 +12,13 @@ use AmazonMWS\core\AmazonMWSCore;
 
 class Feed extends AmazonMWSCore
 {
+    private $options = array();
     function __construct($sellerId = "", $awsKey = "", $secretKey = "", $endpoint = "EU")
     {
+        $this->options["sellerId"]= $sellerId;
+        $this->options["awsKey"]= $awsKey;
+        $this->options["secretKey"]= $secretKey;
+        $this->options["endpoint"]= $endpoint;
         parent::__construct($sellerId, $awsKey, $secretKey);
         $this->setAPIName("Feeds");
         $this->setAPIVersion("2009-01-01");
@@ -21,6 +26,19 @@ class Feed extends AmazonMWSCore
         $this->setTimestamp();
         $this->setSignatureVersion(2);
         $this->setEndPoint($endpoint);
+        $this->setAPIRequestType("POST");
+    }
+
+    public function init()
+    {
+        parent::__construct($this->options["sellerId"], $this->options["awsKey"], $this->options["secretKey"]);
+        parent::init();
+        $this->setEndPoint($this->options["endpoint"]);
+        $this->setAPIName("Feeds");
+        $this->setAPIVersion("2009-01-01");
+        $this->setSignatureMethod();
+        $this->setTimestamp();
+        $this->setSignatureVersion(2);
         $this->setAPIRequestType("POST");
     }
 

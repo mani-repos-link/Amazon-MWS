@@ -5,8 +5,13 @@ use AmazonMWS\core\AmazonMWSCore;
 
 class Orders extends AmazonMWSCore
 {
+    private $options = array();
     function __construct($sellerId = "", $awsKey = "", $secretKey = "", $endpoint="EU")
     {
+        $this->options["sellerId"]= $sellerId;
+        $this->options["awsKey"]= $awsKey;
+        $this->options["secretKey"]= $secretKey;
+        $this->options["endpoint"]= $endpoint;
         parent::__construct($sellerId, $awsKey, $secretKey);
         $this->setAPIName("Orders");
         $this->setAPIVersion("2013-09-01");
@@ -16,6 +21,20 @@ class Orders extends AmazonMWSCore
         $this->setEndPoint($endpoint);
         $this->setAPIRequestType("POST");
     }
+
+    public function init()
+    {
+        parent::__construct($this->options["sellerId"], $this->options["awsKey"], $this->options["secretKey"]);
+        parent::init();
+        $this->setAPIName("Orders");
+        $this->setAPIVersion("2013-09-01");
+        $this->setSignatureMethod();
+        $this->setTimestamp();
+        $this->setSignatureVersion(2);
+        $this->setEndPoint($this->options["endpoint"]);
+        $this->setAPIRequestType("POST");
+    }
+
 
     private function __dateReplacement($str)
     {

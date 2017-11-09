@@ -12,6 +12,7 @@ use AmazonMWS\core\AmazonMWSCore;
 
 class Reports extends AmazonMWSCore
 {
+    private $options = array();
     function __construct($sellerId = "", $awsKey = "", $secretKey = "", $endpoint = "EU")
     {
         parent::__construct($sellerId, $awsKey, $secretKey);
@@ -21,6 +22,19 @@ class Reports extends AmazonMWSCore
         $this->setTimestamp();
         $this->setSignatureVersion(2);
         $this->setEndPoint($endpoint);
+        $this->setAPIRequestType("POST");
+    }
+
+    public function init()
+    {
+        parent::__construct($this->options["sellerId"], $this->options["awsKey"], $this->options["secretKey"]);
+        parent::init();
+        $this->setAPIName("Reports");
+        $this->setAPIVersion("2009-01-01");
+        $this->setSignatureMethod();
+        $this->setTimestamp();
+        $this->setSignatureVersion(2);
+        $this->setEndPoint($this->options["endpoint"]);
         $this->setAPIRequestType("POST");
     }
 

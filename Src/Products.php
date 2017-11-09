@@ -6,9 +6,13 @@ use AmazonMWS\Core\AmazonMWSCore;
 
 class Products extends AmazonMWSCore
 {
-
+    private $options = array();
     function __construct($sellerId = "", $awsKey = "", $secretKey = "", $endpoint="EU")
     {
+        $this->options["sellerId"]= $sellerId;
+        $this->options["awsKey"]= $awsKey;
+        $this->options["secretKey"]= $secretKey;
+        $this->options["endpoint"]= $endpoint;
         parent::__construct($sellerId, $awsKey, $secretKey);
         $this->setAPIName("Products");
         $this->setAPIVersion("2011-10-01");
@@ -16,6 +20,19 @@ class Products extends AmazonMWSCore
         $this->setTimestamp();
         $this->setSignatureVersion(2);
         $this->setEndPoint($endpoint);
+        $this->setAPIRequestType("POST");
+    }
+
+    public function init()
+    {
+        parent::__construct($this->options["sellerId"], $this->options["awsKey"], $this->options["secretKey"]);
+        parent::init();
+        $this->setAPIName("Products");
+        $this->setAPIVersion("2011-10-01");
+        $this->setSignatureMethod();
+        $this->setTimestamp();
+        $this->setSignatureVersion(2);
+        $this->setEndPoint($this->options["endpoint"]);
         $this->setAPIRequestType("POST");
     }
 
