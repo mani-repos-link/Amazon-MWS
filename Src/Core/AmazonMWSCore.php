@@ -7,13 +7,13 @@ use cURLRequester\cURLRequester;
 class AmazonMWSCore
 {
 
-	protected $options = array();
+	private $options = array();
 
-	protected $log = array();
+	private $log = array();
 
 	protected $headers = array();
 
-	protected $curl = "";
+	private $curl = "";
 
 	protected $saveResultPath = "";
 
