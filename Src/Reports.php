@@ -201,7 +201,7 @@ class Reports extends AmazonMWSCore
 
     public function RequestReport($ReportType, $MarketplaceIdList="", $StartDate="", $EndDate="", $ReportOptions="")
     {
-        $this->setAPIAction("CancelReportRequests");
+        $this->setAPIAction("RequestReport");
         if (!empty($StartDate)) {
             $date = $this->__fixDateTime($StartDate);
             $this->setOperationField("StartDate", $date);
