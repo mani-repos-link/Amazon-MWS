@@ -38,6 +38,33 @@ class Reports extends AmazonMWSCore
         $this->setAPIRequestType("POST");
     }
 
+    private function __setMarketPlaceID($marketplaceId)
+    {
+        if(empty($marketplaceId))
+            return $marketplaceId;
+        if(is_string($marketplaceId))
+        {
+            if(strlen($marketplaceId) == 2)
+                $marketplaceId = $this->_getMarketPlaceID($marketplaceId);
+
+        }elseif(is_array($marketplaceId)){
+            $market = [];
+            foreach ($marketplaceId as $key => $id){
+
+                if( is_array($id))
+                    continue; // i can't do anything >:((
+
+                if(strlen($id) === 2){
+                    $market[] = $this->_getMarketPlaceID($id);
+                }else{
+                    $market[] = $id;
+                }
+            }
+            $marketplaceId = $market;
+        }
+        return $marketplaceId;
+    }
+
     private function __dateReplacement($str)
     {
         //$str = str_replace("%3A",":",$str);
@@ -212,6 +239,7 @@ class Reports extends AmazonMWSCore
             $this->setOperationField("EndDate", $date);
         }
 
+        $MarketplaceIdList = $this->__setMarketPlaceID($MarketplaceIdList);
         if (!empty($ReportOptions)) $this->setOperationField("ReportOptions", $ReportOptions);
         if (!empty($ReportType)) $this->setOperationField("ReportType", $ReportType);
         if (!empty($MarketplaceIdList)) $this->_setMarketPlaceId($MarketplaceIdList, true);
