@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<RequestReportResponse xmlns="http://mws.amazonaws.com/doc/2009-01-01/">
+  <RequestReportResult>
+    <ReportRequestInfo>
+      <ReportType>_GET_FLAT_FILE_ORDERS_DATA_</ReportType>
+      <ReportProcessingStatus>_SUBMITTED_</ReportProcessingStatus>
+      <EndDate>2017-11-25T14:16:05+00:00</EndDate>
+      <Scheduled>false</Scheduled>
+      <ReportRequestId>68617017495</ReportRequestId>
+      <SubmittedDate>2017-11-25T14:16:05+00:00</SubmittedDate>
+      <StartDate>2017-11-25T14:16:05+00:00</StartDate>
+    </ReportRequestInfo>
+  </RequestReportResult>
+  <ResponseMetadata>
+    <RequestId>732a7ffd-00ae-4e4f-a82d-e8ac33901efe</RequestId>
+  </ResponseMetadata>
+</RequestReportResponse>

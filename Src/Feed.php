@@ -182,7 +182,7 @@ class Feed extends AmazonMWSCore
         $feedFile = __DIR__.DIRECTORY_SEPARATOR."Others".DIRECTORY_SEPARATOR."feed.xml";
         file_put_contents($feedFile, $feedContent);
 
-        if(!$this->_isValidXML($feed))
+        if(!$this->_isValidXML($feedContent))
         {
             $this->requestAble(false);
             $this->log("Request is cancelled due to invalid xml feed.");
