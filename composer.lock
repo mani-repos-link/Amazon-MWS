@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "9fd0becddf0e0570a89b9d61edfe23c1",
+    "content-hash": "071c0cfa622f7e2f9ae816ea0b7793c2",
     "packages": [
         {
             "name": "phoenix404/curl-requester",
-            "version": "v1.0.0",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Phoenix404/curl-requester.git",
-                "reference": "0d91c67e2c9f1b2e4f96e3040ada85c2ebf78d0a"
+                "reference": "2886d61b45bf34efd6bbfd33b2fa2ed0c2b41ada"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Phoenix404/curl-requester/zipball/0d91c67e2c9f1b2e4f96e3040ada85c2ebf78d0a",
-                "reference": "0d91c67e2c9f1b2e4f96e3040ada85c2ebf78d0a",
+                "url": "https://api.github.com/repos/Phoenix404/curl-requester/zipball/2886d61b45bf34efd6bbfd33b2fa2ed0c2b41ada",
+                "reference": "2886d61b45bf34efd6bbfd33b2fa2ed0c2b41ada",
                 "shasum": ""
             },
             "require": {
@@ -41,7 +41,7 @@
                 }
             ],
             "description": "Curl Request ready to go...",
-            "time": "2017-10-29T14:07:34+00:00"
+            "time": "2017-12-02T23:01:28+00:00"
         },
         {
             "name": "phoenix404/php-proxiest",
