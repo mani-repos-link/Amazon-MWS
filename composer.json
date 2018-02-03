@@ -3,7 +3,7 @@
     "description": "Make simple request to MWS.",
     "type": "library",
     "require": {
-        "phoenix404/curl-requester": "dev-master"
+        "phoenix404/curl-requester": "v1.1.0"
     },
     "license": "MIT",
     "authors": [
