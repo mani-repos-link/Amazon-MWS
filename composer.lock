@@ -4,24 +4,24 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "071c0cfa622f7e2f9ae816ea0b7793c2",
+    "content-hash": "9ed080cc9565cf898944776ca1faa6df",
     "packages": [
         {
             "name": "phoenix404/curl-requester",
-            "version": "v1.1.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Phoenix404/curl-requester.git",
-                "reference": "2886d61b45bf34efd6bbfd33b2fa2ed0c2b41ada"
+                "reference": "025518dfcf25626f96a0eafa5abda3ca8591f691"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Phoenix404/curl-requester/zipball/2886d61b45bf34efd6bbfd33b2fa2ed0c2b41ada",
-                "reference": "2886d61b45bf34efd6bbfd33b2fa2ed0c2b41ada",
+                "url": "https://api.github.com/repos/Phoenix404/curl-requester/zipball/025518dfcf25626f96a0eafa5abda3ca8591f691",
+                "reference": "025518dfcf25626f96a0eafa5abda3ca8591f691",
                 "shasum": ""
             },
             "require": {
-                "phoenix404/php-proxiest": "v1.0",
+                "phoenix404/php-proxiest": "dev-master",
                 "phoenix404/useragents": "v1.1"
             },
             "type": "library",
@@ -41,21 +41,25 @@
                 }
             ],
             "description": "Curl Request ready to go...",
-            "time": "2017-12-02T23:01:28+00:00"
+            "time": "2018-02-03 15:37:53"
         },
         {
             "name": "phoenix404/php-proxiest",
-            "version": "v1.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Phoenix404/php-proxiest.git",
-                "reference": "f056d47e237995ae1cdf2aedc6b7934f1109f3e9"
+                "reference": "dcc549ec333da9405aa00accc698cb24ded414b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Phoenix404/php-proxiest/zipball/f056d47e237995ae1cdf2aedc6b7934f1109f3e9",
-                "reference": "f056d47e237995ae1cdf2aedc6b7934f1109f3e9",
+                "url": "https://api.github.com/repos/Phoenix404/php-proxiest/zipball/dcc549ec333da9405aa00accc698cb24ded414b9",
+                "reference": "dcc549ec333da9405aa00accc698cb24ded414b9",
                 "shasum": ""
+            },
+            "require": {
+                "phoenix404/useragents": "v1.1",
+                "php": ">=7"
             },
             "type": "library",
             "autoload": {
@@ -74,7 +78,7 @@
                 }
             ],
             "description": "get proxy",
-            "time": "2017-10-13T19:36:25+00:00"
+            "time": "2018-02-03 14:44:36"
         },
         {
             "name": "phoenix404/useragents",
@@ -113,7 +117,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "phoenix404/curl-requester": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
